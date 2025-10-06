@@ -1,0 +1,597 @@
+/**
+ * Estilos CSS para el panel de administración de AliExpress Smart Ads
+ * @package AliExpress_Smart_Ads
+ */
+
+/* ==========================================================================
+   DASHBOARD
+   ========================================================================== */
+
+.ali-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0 30px 0;
+}
+
+.ali-stat-box {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 4px solid #0073aa;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ali-stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.ali-stat-box h3 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    color: #0073aa;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.ali-stat-box p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.ali-dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.ali-recent-banners,
+.ali-quick-stats {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ali-recent-banners h2,
+.ali-quick-stats h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #23282d;
+    font-size: 20px;
+}
+
+/* Estados de banners */
+.ali-status-active {
+    color: #46b450;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ali-status-active::before {
+    content: "●";
+    font-size: 12px;
+}
+
+.ali-status-inactive {
+    color: #dc3232;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ali-status-inactive::before {
+    content: "●";
+    font-size: 12px;
+}
+
+/* Quick stats */
+.ali-quick-stats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ali-quick-stats li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.ali-quick-stats .dashicons {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.ali-quick-stats .dashicons-yes {
+    color: #46b450;
+}
+
+.ali-quick-stats .dashicons-no {
+    color: #dc3232;
+}
+
+/* Empty state */
+.ali-empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ali-empty-state h2 {
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.ali-empty-state p {
+    color: #999;
+    margin-bottom: 30px;
+    font-size: 16px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ali-empty-state .dashicons {
+    font-size: 80px;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+.ali-banner-form .form-table th {
+    width: 200px;
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+.ali-banner-form .form-table td {
+    padding: 15px 10px;
+}
+
+.ali-banner-form .description {
+    margin-top: 8px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Radio buttons para tipo de banner */
+.ali-banner-form input[type="radio"] {
+    margin-right: 8px;
+}
+
+.ali-banner-form label {
+    margin-right: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Campo de imagen */
+.image-url-field {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.image-url-field input[type="url"] {
+    flex: 1;
+}
+
+/* Vista previa de imagen */
+.ali-image-preview {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.ali-image-preview img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   LISTADO DE BANNERS
+   ========================================================================== */
+
+.wp-list-table .column-actions {
+    width: 150px;
+}
+
+.ali-toggle-banner {
+    margin-right: 5px;
+}
+
+.ali-toggle-banner.active {
+    background: #46b450;
+    border-color: #46b450;
+    color: #fff;
+}
+
+.ali-toggle-banner.inactive {
+    background: #dc3232;
+    border-color: #dc3232;
+    color: #fff;
+}
+
+/* Thumbnails en listado */
+.ali-banner-thumb {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+/* Métricas en tabla */
+.ali-metric {
+    font-weight: 600;
+    color: #0073aa;
+}
+
+.ali-metric-small {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN
+   ========================================================================== */
+
+.ali-settings-section {
+    background: #fff;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ali-settings-section h2 {
+    margin-top: 0;
+    color: #23282d;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+/* Checkboxes en configuración */
+.ali-checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.ali-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.ali-checkbox-item:hover {
+    background: #f0f0f0;
+}
+
+.ali-checkbox-item.checked {
+    border-color: #0073aa;
+    background: rgba(0, 115, 170, 0.1);
+}
+
+/* ==========================================================================
+   NOTIFICACIONES
+   ========================================================================== */
+
+.ali-notice {
+    padding: 15px;
+    border-left: 4px solid #0073aa;
+    background: #fff;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.ali-notice.success {
+    border-left-color: #46b450;
+    background: rgba(70, 180, 80, 0.1);
+}
+
+.ali-notice.error {
+    border-left-color: #dc3232;
+    background: rgba(220, 50, 50, 0.1);
+}
+
+.ali-notice.warning {
+    border-left-color: #ffb900;
+    background: rgba(255, 185, 0, 0.1);
+}
+
+/* ==========================================================================
+   LOADING Y ESTADOS
+   ========================================================================== */
+
+.ali-loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.ali-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Botones de acción */
+.ali-action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ali-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ali-btn-primary {
+    background: #0073aa;
+    color: #fff;
+}
+
+.ali-btn-primary:hover {
+    background: #005177;
+    color: #fff;
+}
+
+.ali-btn-secondary {
+    background: #f1f1f1;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.ali-btn-secondary:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.ali-btn-danger {
+    background: #dc3232;
+    color: #fff;
+}
+
+.ali-btn-danger:hover {
+    background: #c62d2d;
+    color: #fff;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .ali-dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ali-dashboard-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .ali-stat-box {
+        padding: 20px 15px;
+    }
+    
+    .ali-stat-box h3 {
+        font-size: 28px;
+    }
+    
+    .ali-checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .ali-action-buttons {
+        flex-direction: column;
+    }
+    
+    .ali-banner-form .form-table th,
+    .ali-banner-form .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .ali-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .ali-recent-banners,
+    .ali-quick-stats {
+        padding: 15px;
+    }
+    
+    .ali-empty-state {
+        padding: 40px 15px;
+    }
+}
+
+/* ==========================================================================
+   MODO OSCURO (Admin)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .ali-stat-box,
+    .ali-recent-banners,
+    .ali-quick-stats,
+    .ali-settings-section {
+        background: #1e1e1e;
+        color: #ccc;
+    }
+    
+    .ali-stat-box h3 {
+        color: #4f94d4;
+    }
+    
+    .ali-quick-stats li {
+        background: #2a2a2a;
+    }
+    
+    .ali-checkbox-item {
+        background: #2a2a2a;
+        color: #ccc;
+    }
+    
+    .ali-checkbox-item.checked {
+        border-color: #4f94d4;
+        background: rgba(79, 148, 212, 0.2);
+    }
+}
+
+/* ==========================================================================
+   ICONOS Y ELEMENTOS VISUALES
+   ========================================================================== */
+
+.ali-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Badges */
+.ali-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ali-badge-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.ali-badge-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.ali-badge-warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.ali-badge-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Tooltips */
+.ali-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.ali-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.ali-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Progress bars */
+.ali-progress {
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    margin: 10px 0;
+}
+
+.ali-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #0073aa, #4f94d4);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
